@@ -20,7 +20,7 @@
   <a href="https://percy.io/cypress-io/cypress-realworld-app">
     <img src="https://percy.io/static/images/percy-badge.svg" />
   </a>
-  
+
    <a href="#contributors-">
     <img src="https://img.shields.io/badge/all_contributors-6-green.svg?style=flat" />
   </a>
@@ -44,11 +44,11 @@ A payment application to demonstrate <strong>real-world</strong> usage of <a hre
 
 ## Features
 
-🛠 Built with [React][reactjs], [XState][xstate], [Express][express], [lowdb][lowdb], [Material-UI][material-ui] and [TypeScript][typescript]  
-⚡️ Zero database dependencies  
-🚀 Full-stack [Express][express]/[React][reactjs] application with real-world features and tests  
-👮‍♂️ Local Authentication  
-🔥 Database Seeding with End-to-end Tests  
+🛠 Built with [React][reactjs], [XState][xstate], [Express][express], [lowdb][lowdb], [Material-UI][material-ui] and [TypeScript][typescript]
+⚡️ Zero database dependencies
+🚀 Full-stack [Express][express]/[React][reactjs] application with real-world features and tests
+👮‍♂️ Local Authentication
+🔥 Database Seeding with End-to-end Tests
 💻 CI/CD + [Cypress Dashboard][cypressdashboard]
 
 ## Getting Started
@@ -59,7 +59,7 @@ The app is bundled with [example data](./data/database.json) (`data/database.jso
 
 > 🚩 **Note**
 >
-> You can login to the app with any of the [example app users](./data/database.json#L2). The default password for all users is `s3cret`.  
+> You can login to the app with any of the [example app users](./data/database.json#L2). The default password for all users is `s3cret`.
 > Example users can be seen by running `yarn list:dev:users`.
 
 ### Prerequisites
@@ -85,44 +85,6 @@ yarn dev
 > The app will run on port `3000` (frontend) and `3001` (API backend) by default. Please make sure there are no other applications or services running on both ports.
 > If you want to change the default ports, you can do so by modifying `REACT_APP_PORT` and `REACT_APP_BACKEND_PORT` variables in `.env` file.
 > However, make sure the modified port numbers in `.env` are not commited into Git since the CI environments still expect the application run on default ports.
-
-### Start Cypress
-
-```shell
-yarn cypress:open
-```
-
-> 🚩 **Note**
->
-> If you have changed the default ports, then you need to update Cypress configuration file (`cypress.json`) locally.
-> There are three properties that you need to update in `cypress.json`: `baseUrl`, `apiUrl`, and `url`.
-> The port number in `baseUrl` corresponds to `REACT_APP_PORT` variable in `.env` file. Similarly, the port number in `apiUrl` and `url` correspond to `REACT_APP_BACKEND_PORT`.
-> For example, if you have changed `REACT_APP_PORT` to `13000` and `REACT_APP_BACKEND_PORT` to `13001` in `.env` file, then your `cypress.json` should look similar to the following snippet:
->
-> ```json
-> {
->   "baseUrl": "http://localhost:13000",
->   /* Omitted for brevity */
->   "env": {
->     "apiUrl": "http://localhost:13001",
->     /* Omitted for brevity */
->     "codeCoverage": {
->       "url": "http://localhost:13001/__coverage__"
->     }
->   },
->   "experimentalStudio": true
-> }
-> ```
->
-> Avoid committing the modified `cypress.json` into Git since the CI environments still expect the application run on default ports.
-
-## Tests
-
-| Type | Location                                 |
-| ---- | ---------------------------------------- |
-| api  | [cypress/tests/api](./cypress/tests/api) |
-| ui   | [cypress/tests/ui](./cypress/tests/ui)   |
-| unit | [`src/__tests__`](./src/__tests__)       |
 
 ## Database
 
@@ -153,15 +115,6 @@ yarn cypress:open
 | list:dev:users | Provides id and username for users in the dev database                                                                                                                            |
 
 For a complete list of scripts see [package.json](./package.json)
-
-## Code Coverage Report
-
-The Cypress Real-World App uses the [@cypress/code-coverage](https://github.com/cypress-io/code-coverage) plugin to generate code coverage reports for the app frontend and backend.
-
-To generate a code coverage report:
-
-1. Run `yarn cypress:run --env coverage=true` and wait for the test run to complete.
-2. Once the test run is complete, you can view the report at `coverage/index.html`.
 
 ## 3rd Party Authentication Providers
 
